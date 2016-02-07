@@ -1,7 +1,12 @@
 <?php
+if(isset($_POST)){
+    $function_name = $_POST['function'];
+   
+    if($function_name == 'generate'){
+        generate();
+    }
+}
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
+function generate(){
+    include('result.php'); 
+}

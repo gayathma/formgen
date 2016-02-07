@@ -40,7 +40,9 @@
                 <input name="function" value="generate" type="hidden"/>
             </form>
             
-            
+            <div>
+                <span>Result</span>
+            </div>
         </div>
     </body>
 </html>
