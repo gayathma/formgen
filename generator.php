@@ -8,5 +8,8 @@ if(isset($_POST)){
 }
 
 function generate(){
+    //save and retrieve data from the database
+    
+    
     include('result.php'); 
 }
