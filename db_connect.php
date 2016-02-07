@@ -2,12 +2,16 @@
 
 $mysql_host = "localhost";
 $mysql_username = "root";
-$mysql_password = "hmhrh";
-$mysql_dbname = "Assignment2";
+$mysql_password = "hesh";
+$mysql_dbname = "FormGen";
 
-if (!mysql_connect($mysql_host, $mysql_username, $mysql_password) || !mysql_select_db($mysql_dbname)) {
-    die(mysql_error());
+
+$conn = new mysqli($mysql_host, $mysql_username, $mysql_password);
+
+// Check connection
+if ($conn->connect_error) {
+    die('Failed : ' . $conn->connect_error);
 } else {
-    echo "success";
+    echo 'Connection Success';
 }
 ?>  
