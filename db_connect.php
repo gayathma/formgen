@@ -3,15 +3,12 @@
 $mysql_host = "localhost";
 $mysql_username = "root";
 $mysql_password = "hesh";
-$mysql_dbname = "FormGen";
+$mysql_dbname = "formgen";
 
 
-$conn = new mysqli($mysql_host, $mysql_username, $mysql_password);
-
-// Check connection
-if ($conn->connect_error) {
-    die('Failed : ' . $conn->connect_error);
+if (!mysql_connect($mysql_host, $mysql_username, $mysql_password) || !mysql_select_db($mysql_dbname)) {
+    die(mysql_error());
 } else {
-    echo 'Connection Success';
+    echo "Connection Success";
 }
 ?>  

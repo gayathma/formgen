@@ -24,11 +24,11 @@
                     </div>
                     <div class="col-md-6">
                         <select class="form-control" id="elemet_type" name="elemet_type">
-                            <option>Checkboxes</option>
-                            <option>Dropdown</option>
-                            <option>Radio Button</option>
-                            <option>Text Field</option>
-                            <option>Text Area</option>
+                            <option value="1">Checkboxes</option>
+                            <option value="2">Dropdown</option>
+                            <option value="3">Radio Button</option>
+                            <option value="4">Text Field</option>
+                            <option value="5">Text Area</option>
                         </select>
                     </div>
                 </div>
@@ -38,9 +38,7 @@
                     </div>
                 </div>
                 <input name="function" value="generate" type="hidden"/>
-            </form>
-            
-            
+            </form>                       
         </div>
     </body>
 </html>
