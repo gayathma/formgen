@@ -15,8 +15,8 @@
             <form class="form-horizontal" name="gen_form" id="gen_form" method="POST" action="generator.php">
                 <div class="form-group">
                     <div class="col-md-12">
-                        <input type="hidden" class="form-control" id="form_id" name="form_id" value="<?php //echo form_id; ?>">
-                        <input type="text" class="form-control" id="form_name" name="form_name" placeholder="Form Title" value="<?php //echo form_name; ?>" readonly>
+                        <input type="hidden" class="form-control" id="form_id" name="form_id" value="<?php echo $_SESSION['form_id']; ?>">
+                        <input type="text" class="form-control" id="form_name" name="form_name" placeholder="Form Title" value="<?php echo $_SESSION['form_name']; ?>" readonly>
                     </div>
                 </div>
                 <div class="form-group">
@@ -44,6 +44,3 @@
             <div>
                 <span>Result</span>
             </div>
-        </div>
-    </body>
-</html>
