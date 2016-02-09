@@ -57,7 +57,8 @@ function render_form($form_id) {
 
     include ('result.php');
 
-    echo '<form class="form-horizontal">';
+    echo '<div class="container">
+            <div class="row"><form class="form-horizontal">';
     while ($row = mysql_fetch_array($results)) {
         $name = str_replace(' ', '_', $row['element_label']);
         $options = (!empty($row['options'])) ? explode( ',',$row['options']): ' ';
@@ -107,7 +108,8 @@ function render_form($form_id) {
                 break;
         endswitch;
     }
-    echo '</form>';
+    echo '</form></div>
+        </div>';
 }
 
 function download_form() {
@@ -132,6 +134,7 @@ function download_form() {
     echo '<form class="form-horizontal">';
     while ($row = mysql_fetch_array($results)) {
         $name = str_replace(' ', '_', $row['element_label']);
+        $options = (!empty($row['options'])) ? explode( ',',$row['options']): ' ';
 
         switch ($row['element']):
             case 'chk_box':
@@ -141,10 +144,14 @@ function download_form() {
                 echo '</div></div>';
                 break;
             case 'drp_dwn':
+                
                 echo '<div class="form-group"><div class="col-md-6">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <select class="form-control" name="' . $name . '">';
                 echo ' <option value="">Select Value</option>';
+                foreach ($options as $option) {
+                    echo ' <option value="'.$option.'">'.$option.'</option>';
+                }
                 echo ' </select>';
                 echo '</div></div>';
                 break;
