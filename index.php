@@ -6,6 +6,7 @@
             <div class="starter-template">
                 <h1>FormGen</h1>
                 <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+                <a class="btn btn-success" href="index.php">New Form</a>
             </div>
 
             <form class="form-horizontal" name="gen_form" id="gen_form" method="POST" action="generator.php">
@@ -28,6 +29,11 @@
                             <option value="sub_btn">Submit Button</option>
                             <option value="canc_btn">Cancel Button</option>
                         </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control"  name="options" id="options" placeholder="Select Options with comma (,) seperated">
                     </div>
                 </div>
                 <div class="form-group">
