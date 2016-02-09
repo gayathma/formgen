@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php include 'header.php'; ?>
+    <?php  session_start();?>
     <body>
         <div class="container">
             <div class="row">

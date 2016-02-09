@@ -58,11 +58,7 @@ function render_form($form_id) {
     include ('result.php');
 
     echo '<div class="container">
-            <div class="row" style="padding-bottom: 17px;
-    border: 2px dashed #888888;
-    margin: 1px;
-    margin-top: 15px;
-    border-radius: 5px;"><form>';
+            <div class="row" ><form class="form-horizontal">';
     while ($row = mysql_fetch_array($results)) {
         $name = str_replace(' ', '_', $row['element_label']);
         $options = (!empty($row['options'])) ? explode( ',',$row['options']): ' ';
@@ -105,10 +101,10 @@ function render_form($form_id) {
                 echo '</div></div>';
                 break;
             case 'canc_btn':
-                echo '<input class="btn btn-primary pull-right" type="cancel" name="' . $name . '" value="' . $row['element_label'] . '"/>';
+                echo '<input class="btn btn-primary pull-right" type="cancel" style="margin-right:5px" name="' . $name . '" value="' . $row['element_label'] . '"/>';
                 break;
             case 'sub_btn':
-                echo '<input class="btn btn-success pull-right" type="submit" name="' . $name . '" value="' . $row['element_label'] . '"/>';
+                echo '<input class="btn btn-success pull-right" type="submit" style="margin-right:5px" name="' . $name . '" value="' . $row['element_label'] . '"/>';
                 break;
         endswitch;
     }
