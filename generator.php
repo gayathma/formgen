@@ -58,21 +58,25 @@ function render_form($form_id) {
     include ('result.php');
 
     echo '<div class="container">
-            <div class="row"><form class="form-horizontal">';
+            <div class="row" style="padding-bottom: 17px;
+    border: 2px dashed #888888;
+    margin: 1px;
+    margin-top: 15px;
+    border-radius: 5px;"><form>';
     while ($row = mysql_fetch_array($results)) {
         $name = str_replace(' ', '_', $row['element_label']);
         $options = (!empty($row['options'])) ? explode( ',',$row['options']): ' ';
 
         switch ($row['element']):
             case 'chk_box':
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <input class="form-control" type="checkbox" name="' . $name . '"/>';
                 echo '</div></div>';
                 break;
             case 'drp_dwn':
                 
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <select class="form-control" name="' . $name . '">';
                 echo ' <option value="">Select Value</option>';
@@ -83,19 +87,19 @@ function render_form($form_id) {
                 echo '</div></div>';
                 break;
             case 'radio':
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <input class="form-control" type="radio" name="' . $name . '"/>';
                 echo '</div></div>';
                 break;
             case 'txtf':
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <input type="text" class="form-control" name="' . $name . '">';
                 echo '</div></div>';
                 break;
             case 'txtarea':
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <textarea class="form-control" name="' . $name . '"></textarea>';
                 echo '</div></div>';
@@ -131,21 +135,21 @@ function download_form() {
     $results      = mysql_query($query_select);
 
     echo '<html><head></head><body>';
-    echo '<form class="form-horizontal">';
+    echo '<form >';
     while ($row = mysql_fetch_array($results)) {
         $name = str_replace(' ', '_', $row['element_label']);
         $options = (!empty($row['options'])) ? explode( ',',$row['options']): ' ';
 
         switch ($row['element']):
             case 'chk_box':
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <input class="form-control" type="checkbox" name="' . $name . '"/>';
                 echo '</div></div>';
                 break;
             case 'drp_dwn':
                 
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <select class="form-control" name="' . $name . '">';
                 echo ' <option value="">Select Value</option>';
@@ -156,19 +160,19 @@ function download_form() {
                 echo '</div></div>';
                 break;
             case 'radio':
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <input class="form-control" type="radio" name="' . $name . '"/>';
                 echo '</div></div>';
                 break;
             case 'txtf':
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <input type="text" class="form-control" name="' . $name . '">';
                 echo '</div></div>';
                 break;
             case 'txtarea':
-                echo '<div class="form-group"><div class="col-md-6">';
+                echo '<div class="form-group"><div class="col-md-4">';
                 echo '<label>' . $row['element_label'] . '</label>
                         <textarea class="form-control" name="' . $name . '"></textarea>';
                 echo '</div></div>';

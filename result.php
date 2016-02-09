@@ -64,10 +64,10 @@
             </div>
             <div class="row">
                 <form method="POST" action="generator.php">
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <input type="hidden" class="form-control" id="form_id" name="form_id" value="<?php echo $_SESSION['form_id']; ?>">
-                            <input type="submit" value="Download Form" class="btn btn-primary"/>
+                            <input type="submit" value="Download Form" class="btn btn-primary" style="float:right"/>
                         </div>
                     </div>
                     <input name="function" value="download" type="hidden"/>
