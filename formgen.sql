@@ -1,14 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2016 at 07:44 PM
--- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- Generation Time: Feb 09, 2016 at 04:40 PM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `formgen`
@@ -17,36 +23,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `elements`
---
-
-CREATE TABLE IF NOT EXISTS `elements` (
-`id` int(10) NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
-  `element_html` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `elements`
---
-
-INSERT INTO `elements` (`id`, `name`, `element_html`) VALUES
-(1, 'Text Field', '<input type="text" class="form-control" name="element_name">'),
-(2, 'Text Area', '<textarea name="element_text"></textarea>'),
-(3, 'Dropdown', '<select class="form-control" name="elemet_dropdown">\r\n                <option value="">Select Value</option>\r\n            </select>'),
-(4, 'Checkbox', '<input type="checkbox" name="element_check"/>'),
-(5, 'Radio Button', '<input type="radio" name="element_radio"/>');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `form`
 --
 
 CREATE TABLE IF NOT EXISTS `form` (
-`id` int(11) NOT NULL,
-  `Title` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Title` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `form`
+--
+
+INSERT INTO `form` (`id`, `Title`) VALUES
+(1, 'test'),
+(2, 'test'),
+(3, 'test'),
+(4, 'test'),
+(5, 'test'),
+(6, 'test'),
+(7, 'test'),
+(8, 'test'),
+(9, 'test'),
+(10, 'dasd'),
+(11, 'dasd'),
+(12, 'dasd'),
+(13, 'FOrm'),
+(14, 'FOrm'),
+(15, 'fsdfdfd');
 
 -- --------------------------------------------------------
 
@@ -55,51 +60,31 @@ CREATE TABLE IF NOT EXISTS `form` (
 --
 
 CREATE TABLE IF NOT EXISTS `form_element` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `form_id` int(11) NOT NULL,
-  `element_id` int(11) NOT NULL,
-  `element_label` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `element` varchar(255) NOT NULL,
+  `element_label` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `form_element`
 --
 
---
--- Indexes for table `elements`
---
-ALTER TABLE `elements`
- ADD PRIMARY KEY (`id`);
+INSERT INTO `form_element` (`id`, `form_id`, `element`, `element_label`) VALUES
+(1, 15, 'drp_dwn', 'fsdfdf'),
+(2, 15, '4', 'dasfsfas'),
+(3, 15, '4', 'dasfsfas'),
+(4, 15, 'txtf', 'sdfdf'),
+(5, 15, 'txtarea', 'zxcxcxc'),
+(6, 15, 'txtarea', 'zxcxcxc'),
+(7, 15, 'txtarea', 'zxcxcxc'),
+(8, 15, 'sub_btn', 'vxccv'),
+(15, 15, 'sub_btn', 'vxccv'),
+(16, 15, 'sub_btn', 'vxccv'),
+(17, 15, 'sub_btn', 'vxccv'),
+(18, 15, 'sub_btn', 'vxccv');
 
---
--- Indexes for table `form`
---
-ALTER TABLE `form`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `form_element`
---
-ALTER TABLE `form_element`
- ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `elements`
---
-ALTER TABLE `elements`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `form`
---
-ALTER TABLE `form`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `form_element`
---
-ALTER TABLE `form_element`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

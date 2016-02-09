@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../FormGen/assets/css/bootstrap.min.css" >
-        <title>FormGen</title>
-    </head>
+    <?php include 'header.php'; ?>
     <body>
         <div class="container">
             <div class="starter-template">
@@ -25,11 +21,13 @@
                     </div>
                     <div class="col-md-6">
                         <select class="form-control" id="elemet_type" name="elemet_type">
-                            <option value="1">Checkboxes</option>
-                            <option value="2">Dropdown</option>
-                            <option value="3">Radio Button</option>
-                            <option value="4">Text Field</option>
-                            <option value="5">Text Area</option>
+                            <option value="txtf">Text Field</option>
+                            <option value="txtarea">Text Area</option>
+                            <option value="chk_box">Checkboxes</option>
+                            <option value="drp_dwn">Dropdown</option>
+                            <option value="radio">Radio Button</option>
+                            <option value="sub_btn">Submit Button</option>
+                            <option value="canc_btn">Cancel Button</option>
                         </select>
                     </div>
                 </div>
@@ -38,9 +36,7 @@
                         <button type="submit" class="btn btn-default">Ok</button>
                     </div>
                 </div>
-                <input name="function" value="add_elements" type="hidden"/>
+                <input name="function" value="generate" type="hidden"/>
             </form>
-
-            <div>
-                <span>Result</span>
-            </div>
+    </body>
+</html>
